@@ -18,6 +18,11 @@ body {
     overflow-x: hidden;
 }
 
+.display {
+    display: flex;
+    align-items: center;
+}
+
 
 
 
