@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Nes Styles</title>
+
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    
+    <script type="module" src="/build/nesstyles-component.esm.js"></script>
+    <script nomodule src="/build/nesstyles-component.js"></script>
+  </head>
+  <body> 
+    <!-- Text Components -->
+    <nestext-component 
+    text="This is a nes.css text component made with Stencil!" 
+    is="primary" 
+    element="p"
+    ></nestext-component>
+    <nestext-component
+    text="Link to nes.css!"
+    is="success"
+    element="a"
+    options='{"href": "https://nostalgic-css.github.io/NES.css/", "target": "_blank"}'
+    ></nestext-component> 
+
+    <!-- Button Components -->
+    <div class="display" style="display: flex; align-items: center; gap: 0.5rem;">
+    <nesbutton-component is="warning"></nesbutton-component>
+    <nesbutton-component is="error" file-input></nesbutton-component>
+    <nesbutton-component text="Custom" file-input></nesbutton-component>
+    </div>
+
+    <!-- Radio Components -->
+    <div class="display" style="display: flex; align-items: center;">
+    <nesradio-component label="Good" value="good" is-dark></nesradio-component>
+    <nesradio-component label="Evil" value="evil"></nesradio-component>
+    </div>
+
+    <!-- Checkbox Components -->
+    <div class="display" style="display: flex; align-items: center;">
+    <nescheckbox-component label="Enable" checked></nescheckbox-component>
+    <nescheckbox-component label="Sanity" is-dark></nescheckbox-component>
+    </div>
+    
+    <!-- Input Components -->
+    <div class="display" style="display: flex; flex-direction: column; gap: 1rem;">
+    <nesinput-component label="username" placeholder="Enter Name Here"></nesinput-component>
+    <nesinput-component label="password" inline field-type="inline" placeholder="Enter Password" status="yellow"></nesinput-component>
+    <nesinput-component label="email" inline field-type="error" placeholder="Enter Email" status="red"></nesinput-component>
+    <nesinput-component label="custom" field-type="dark" placeholder="Go Crazy!" status="green"></nesinput-component>
+    </div>
+
+  </body>
+</html>
