@@ -29,11 +29,20 @@ export namespace Components {
         "name": string;
         "value": string;
     }
+    interface NesselectComponent {
+        "attrs"?: string;
+        "fieldType"?: "default" | "success" | "warning" | "error" | "dark";
+        "label"?: string;
+        "options"?: string;
+    }
     interface NestextComponent {
         "element"?: keyof HTMLElementTagNameMap;
         "is"?: "primary" | "success" | "warning" | "error" | "disabled";
         "options"?: string;
         "text": string;
+    }
+    interface NestextareaComponent {
+        "label": string;
     }
 }
 declare global {
@@ -61,18 +70,32 @@ declare global {
         prototype: HTMLNesradioComponentElement;
         new (): HTMLNesradioComponentElement;
     };
+    interface HTMLNesselectComponentElement extends Components.NesselectComponent, HTMLStencilElement {
+    }
+    var HTMLNesselectComponentElement: {
+        prototype: HTMLNesselectComponentElement;
+        new (): HTMLNesselectComponentElement;
+    };
     interface HTMLNestextComponentElement extends Components.NestextComponent, HTMLStencilElement {
     }
     var HTMLNestextComponentElement: {
         prototype: HTMLNestextComponentElement;
         new (): HTMLNestextComponentElement;
     };
+    interface HTMLNestextareaComponentElement extends Components.NestextareaComponent, HTMLStencilElement {
+    }
+    var HTMLNestextareaComponentElement: {
+        prototype: HTMLNestextareaComponentElement;
+        new (): HTMLNestextareaComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "nesbutton-component": HTMLNesbuttonComponentElement;
         "nescheckbox-component": HTMLNescheckboxComponentElement;
         "nesinput-component": HTMLNesinputComponentElement;
         "nesradio-component": HTMLNesradioComponentElement;
+        "nesselect-component": HTMLNesselectComponentElement;
         "nestext-component": HTMLNestextComponentElement;
+        "nestextarea-component": HTMLNestextareaComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -99,18 +122,29 @@ declare namespace LocalJSX {
         "name"?: string;
         "value"?: string;
     }
+    interface NesselectComponent {
+        "attrs"?: string;
+        "fieldType"?: "default" | "success" | "warning" | "error" | "dark";
+        "label"?: string;
+        "options"?: string;
+    }
     interface NestextComponent {
         "element"?: keyof HTMLElementTagNameMap;
         "is"?: "primary" | "success" | "warning" | "error" | "disabled";
         "options"?: string;
         "text"?: string;
     }
+    interface NestextareaComponent {
+        "label"?: string;
+    }
     interface IntrinsicElements {
         "nesbutton-component": NesbuttonComponent;
         "nescheckbox-component": NescheckboxComponent;
         "nesinput-component": NesinputComponent;
         "nesradio-component": NesradioComponent;
+        "nesselect-component": NesselectComponent;
         "nestext-component": NestextComponent;
+        "nestextarea-component": NestextareaComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -121,7 +155,9 @@ declare module "@stencil/core" {
             "nescheckbox-component": LocalJSX.NescheckboxComponent & JSXBase.HTMLAttributes<HTMLNescheckboxComponentElement>;
             "nesinput-component": LocalJSX.NesinputComponent & JSXBase.HTMLAttributes<HTMLNesinputComponentElement>;
             "nesradio-component": LocalJSX.NesradioComponent & JSXBase.HTMLAttributes<HTMLNesradioComponentElement>;
+            "nesselect-component": LocalJSX.NesselectComponent & JSXBase.HTMLAttributes<HTMLNesselectComponentElement>;
             "nestext-component": LocalJSX.NestextComponent & JSXBase.HTMLAttributes<HTMLNestextComponentElement>;
+            "nestextarea-component": LocalJSX.NestextareaComponent & JSXBase.HTMLAttributes<HTMLNestextareaComponentElement>;
         }
     }
 }
