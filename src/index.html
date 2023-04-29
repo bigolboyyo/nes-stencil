@@ -54,7 +54,7 @@
     <!-- Input Components -->
     <nescontainer-component title-text="Input">
       <nescontainer-component container-style='{"display":"flex", "flex-direction": "column", "border": "transparent", "gap": "1rem"}'>
-        <nesinput-component label="username" placeholder="Enter Name Here"> </nesinput-component>
+        <nesinput-component inline label="username"> </nesinput-component>
         <nesinput-component label="password" field-type="warning" placeholder="Enter Password" status="yellow"> </nesinput-component>
         <nesinput-component label="email" inline field-type="error" placeholder="Enter Email" status="red"> </nesinput-component>
         <nesinput-component label="custom" field-type="dark" placeholder="Go Crazy!" status="green"> </nesinput-component>
@@ -105,5 +105,15 @@
         >
       </nescontainer-component>
     </nescontainer-component>
+
+    <button type="button" class="nes-btn is-primary" onclick="document.querySelector('nesdialog-component').openDialog()">Open dark and rounded dialog</button>
+
+    <nesdialog-component is-dark is-rounded title-text="Dark and Rounded dialog">
+      <p>Alert: this is a dialog.</p>
+      <span slot="menu">
+        <button class="nes-btn" onclick="document.querySelector('nesdialog-component').closeDialog()">Cancel</button>
+        <button class="nes-btn is-primary" onclick="document.querySelector('nesdialog-component').closeDialog()">Confirm</button>
+      </span>
+    </nesdialog-component>
   </body>
 </html>

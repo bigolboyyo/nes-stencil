@@ -23,6 +23,13 @@ export namespace Components {
         "isRounded"?: boolean;
         "titleText"?: string;
     }
+    interface NesdialogComponent {
+        "closeDialog": () => Promise<void>;
+        "isDark"?: boolean;
+        "isRounded"?: boolean;
+        "openDialog": () => Promise<void>;
+        "titleText"?: string;
+    }
     interface NesinputComponent {
         "fieldType"?: "name" | "inline" | "warning" | "error" | "dark";
         "inline"?: boolean;
@@ -71,6 +78,12 @@ declare global {
         prototype: HTMLNescontainerComponentElement;
         new (): HTMLNescontainerComponentElement;
     };
+    interface HTMLNesdialogComponentElement extends Components.NesdialogComponent, HTMLStencilElement {
+    }
+    var HTMLNesdialogComponentElement: {
+        prototype: HTMLNesdialogComponentElement;
+        new (): HTMLNesdialogComponentElement;
+    };
     interface HTMLNesinputComponentElement extends Components.NesinputComponent, HTMLStencilElement {
     }
     var HTMLNesinputComponentElement: {
@@ -105,6 +118,7 @@ declare global {
         "nesbutton-component": HTMLNesbuttonComponentElement;
         "nescheckbox-component": HTMLNescheckboxComponentElement;
         "nescontainer-component": HTMLNescontainerComponentElement;
+        "nesdialog-component": HTMLNesdialogComponentElement;
         "nesinput-component": HTMLNesinputComponentElement;
         "nesradio-component": HTMLNesradioComponentElement;
         "nesselect-component": HTMLNesselectComponentElement;
@@ -126,6 +140,11 @@ declare namespace LocalJSX {
     interface NescontainerComponent {
         "containerStyle"?: string;
         "isCentered"?: boolean;
+        "isDark"?: boolean;
+        "isRounded"?: boolean;
+        "titleText"?: string;
+    }
+    interface NesdialogComponent {
         "isDark"?: boolean;
         "isRounded"?: boolean;
         "titleText"?: string;
@@ -162,6 +181,7 @@ declare namespace LocalJSX {
         "nesbutton-component": NesbuttonComponent;
         "nescheckbox-component": NescheckboxComponent;
         "nescontainer-component": NescontainerComponent;
+        "nesdialog-component": NesdialogComponent;
         "nesinput-component": NesinputComponent;
         "nesradio-component": NesradioComponent;
         "nesselect-component": NesselectComponent;
@@ -176,6 +196,7 @@ declare module "@stencil/core" {
             "nesbutton-component": LocalJSX.NesbuttonComponent & JSXBase.HTMLAttributes<HTMLNesbuttonComponentElement>;
             "nescheckbox-component": LocalJSX.NescheckboxComponent & JSXBase.HTMLAttributes<HTMLNescheckboxComponentElement>;
             "nescontainer-component": LocalJSX.NescontainerComponent & JSXBase.HTMLAttributes<HTMLNescontainerComponentElement>;
+            "nesdialog-component": LocalJSX.NesdialogComponent & JSXBase.HTMLAttributes<HTMLNesdialogComponentElement>;
             "nesinput-component": LocalJSX.NesinputComponent & JSXBase.HTMLAttributes<HTMLNesinputComponentElement>;
             "nesradio-component": LocalJSX.NesradioComponent & JSXBase.HTMLAttributes<HTMLNesradioComponentElement>;
             "nesselect-component": LocalJSX.NesselectComponent & JSXBase.HTMLAttributes<HTMLNesselectComponentElement>;
