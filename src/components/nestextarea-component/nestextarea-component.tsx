@@ -1,4 +1,4 @@
-import { Component,  Prop,  h, Fragment } from '@stencil/core';
+import { Component, Prop, h, Fragment } from '@stencil/core';
 
 @Component({
   tag: 'nestextarea-component',
@@ -6,7 +6,7 @@ import { Component,  Prop,  h, Fragment } from '@stencil/core';
   // shadow: true,
 })
 export class NestextareaComponent {
-  @Prop() label: string = "Textarea";
+  @Prop() label: string = 'Textarea';
 
   render() {
     return (
@@ -16,5 +16,4 @@ export class NestextareaComponent {
       </Fragment>
     );
   }
-
 }

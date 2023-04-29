@@ -5,90 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Nes Styles</title>
 
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/global.css" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    
+
     <script type="module" src="/build/nesstyles-component.esm.js"></script>
     <script nomodule src="/build/nesstyles-component.js"></script>
   </head>
 
-<body> 
-
-<!-- Text Components -->
-<div class="display" 
-  style="flex-direction: column;  align-content: center; justify-content: center;">
-  <nestext-component 
-    text="This is a nes.css text component made with Stencil!" 
-    is="primary" 
-    element="p"
-  ></nestext-component>
-  <nestext-component
-    text="Link to nes.css!"
-    is="success"
-    element="a"
-    options=
-    '{
+  <body>
+    <!-- Text Components -->
+    <nescontainer-component title-text="Text" style="display: flex; flex-direction: column; align-content: center; justify-content: center; text-align: center; max-width: 800px">
+      <nestext-component text="This is a nes.css text component made with Stencil!" is="primary" element="p"></nestext-component>
+      <nestext-component
+        text="Link to nes.css!"
+        is="success"
+        element="a"
+        options='{
       "href": "https://nostalgic-css.github.io/NES.css/",
       "target": "_blank"
     }'
-  ></nestext-component> 
-</div>
+      ></nestext-component>
+    </nescontainer-component>
 
-<!-- Button Components -->
-<div class="display">
-  <nesbutton-component is="warning"></nesbutton-component>
-  <nesbutton-component is="error" file-input></nesbutton-component>
-  <nesbutton-component text="Custom" file-input></nesbutton-component>
-</div>
+    <!-- Button Components -->
+    <nescontainer-component title-text="Button">
+      <nesbutton-component is="warning"></nesbutton-component>
+      <nesbutton-component is="error" file-input></nesbutton-component>
+      <nesbutton-component text="Custom" file-input></nesbutton-component>
+    </nescontainer-component>
 
-<!-- Radio Components -->
-<div class="display">
-  <nesradio-component label="Good" value="good" is-dark></nesradio-component>
-  <nesradio-component label="Evil" value="evil"></nesradio-component>
- </div>
+    <!-- Radio Components -->
+    <nescontainer-component title-text="Radio">
+      <nescontainer-component container-style='{"display":"flex", "border": "transparent"}'>
+        <nesradio-component label="Good" value="good" is-dark></nesradio-component>
+        <nesradio-component label="Evil" value="evil" style="align-self: center"></nesradio-component>
+      </nescontainer-component>
+    </nescontainer-component>
 
-<!-- Checkbox Components -->
-<div class="display">
-  <nescheckbox-component label="Enable" checked></nescheckbox-component>
-  <nescheckbox-component label="Sanity" is-dark></nescheckbox-component>
-</div>
-    
-<!-- Input Components -->
-<div class="display" style=" flex-direction: column; gap: 0.5rem;">
-  <nesinput-component 
-    label="username" 
-    placeholder="Enter Name Here">
-  </nesinput-component>
-  <nesinput-component 
-    label="password" 
-    inline field-type="inline" 
-    placeholder="Enter Password" 
-    status="yellow">
-  </nesinput-component>
-  <nesinput-component 
-    label="email" 
-    inline field-type="error" 
-    placeholder="Enter Email" 
-    status="red">
-  </nesinput-component>
-  <nesinput-component 
-    label="custom" 
-    field-type="dark" 
-    placeholder="Go Crazy!" 
-    status="green">
-  </nesinput-component>
-</div>
+    <!-- Checkbox Components -->
+    <nescontainer-component title-text="Checkbox">
+      <nescontainer-component container-style='{"display":"flex", "border": "transparent"}'>
+        <nescheckbox-component label="Enable" checked style="align-self: center"></nescheckbox-component>
+        <nescheckbox-component label="Sanity" is-dark></nescheckbox-component>
+      </nescontainer-component>
+    </nescontainer-component>
 
-<!-- Textarea Component -->
-<div class="display">
-  <nestextarea-component label="Get writing!"></nestextarea-component>
-</div>
+    <!-- Input Components -->
+    <nescontainer-component title-text="Input">
+      <nescontainer-component container-style='{"display":"flex", "flex-direction": "column", "border": "transparent", "gap": "1rem"}'>
+        <nesinput-component label="username" placeholder="Enter Name Here"> </nesinput-component>
+        <nesinput-component label="password" field-type="warning" placeholder="Enter Password" status="yellow"> </nesinput-component>
+        <nesinput-component label="email" inline field-type="error" placeholder="Enter Email" status="red"> </nesinput-component>
+        <nesinput-component label="custom" field-type="dark" placeholder="Go Crazy!" status="green"> </nesinput-component>
+      </nescontainer-component>
+    </nescontainer-component>
 
-<div class="display" style="gap: 0.5rem;"> 
-  <nesselect-component></nesselect-component>
-  <nesselect-component label="Custom" field-type="dark" 
-    options='[{
+    <!-- Textarea Component -->
+    <nescontainer-component title-text="Textarea">
+      <nestextarea-component label="Get Writing!"></nestextarea-component>
+    </nescontainer-component>
+
+    <!-- Select Components -->
+    <nescontainer-component title-text="Select">
+      <nescontainer-component container-style='{ "display": "flex", "gap": "1rem", "border": "transparent"}'>
+        <nesselect-component></nesselect-component>
+        <nesselect-component
+          label="Custom"
+          field-type="dark"
+          options='[{
       "value": "a", 
       "text": "Good"
     }, 
@@ -100,9 +85,25 @@
       "value": "c",
       "text": "Ugly"
     }]'
-  ></nesselect-component>
-  <nesselect-component label="Disabled" field-type="success" attrs='{"disabled": true}'></nesselect-component>
-</div>
+        ></nesselect-component>
+        <nesselect-component label="Disabled" field-type="success" attrs='{"disabled": true}'></nesselect-component>
+      </nescontainer-component>
+    </nescontainer-component>
 
-</body>
+    <!-- Container Components -->
+    <nescontainer-component title-text="Container" style="max-width: 80vw">
+      <nescontainer-component container-style='{"border": "transparent", "display": "flex", "flex-direction": "column", "gap": "1rem"}'>
+        <nescontainer-component is-dark is-rounded is-centered container-style='{"color": "#ce372b", "padding": "2.5rem"}'>
+          Use the regular style property to affect the component itself and the container-style to grab the main div of the nescontainer-component.</nescontainer-component
+        >
+        <nescontainer-component title-text="Such" is-centered is-rounded style="color: green"
+          >This was done to allow for style issues between containers with and without titles.</nescontainer-component
+        >
+        <nescontainer-component title-text="Wow!" is-centered is-dark style="color: aqua"
+          >Feel free to experiment and let me know if you find a better solution. Dont be afraid to nest an extra container without a title to avoid any
+          issues.</nescontainer-component
+        >
+      </nescontainer-component>
+    </nescontainer-component>
+  </body>
 </html>

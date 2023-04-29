@@ -1,28 +1,33 @@
-*, #root, html, body {
-    margin: 0;
+*,
+#root,
+html,
+body {
+  margin: 0;
 }
 
-*, #root, html, body, pre, code, kbd, samp {
-    font-family: 'Press Start 2P', cursive;
-  }
+*,
+#root,
+html,
+body,
+pre,
+code,
+kbd,
+samp {
+  font-family: 'Press Start 2P', cursive;
+}
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 100vw;
-    overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5vmin;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
-.display {
-    display: flex;
-    align-items: center;
-}
-
-
-
-
+/* p.title {
+  position: absolute;
+} */
