@@ -1,7 +1,3 @@
-export function format(first: string, middle: string, last: string): string {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
-
 export function toggleDialog(dialogId: string, action: 'open' | 'close') {
   const dialog = document.querySelector(dialogId) as any;
   if (dialog) {

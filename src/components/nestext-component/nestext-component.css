@@ -1,0 +1,3 @@
+.dark-theme li::before {
+  color: white !important;
+}

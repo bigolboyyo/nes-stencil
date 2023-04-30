@@ -106,6 +106,7 @@
       </nescontainer-component>
     </nescontainer-component>
 
+    <!-- Dialog Components -->
     <nescontainer-component title-text="Dialog" style="max-width: 1000px">
       <nescontainer-component container-style='{ "display": "flex", "flex-direction": "column", "gap": "1rem", "border": "transparent"}'>
         <nesdialogbtn-component dialog-id="#my-dialog" text="Show dark and rounded dialog" toggle-fn="toggleDialog"></nesdialogbtn-component>
@@ -118,8 +119,8 @@
         </nesdialog-component>
 
         <nesdialogbtn-component dialog-id="#my-dialog-two" text="Just some normal dialog" toggle-fn="toggleDialog"></nesdialogbtn-component>
-        <nesdialog-component id="my-dialog-two" title-text="JK it was a dialog, with options ;)" options='{"color": "red", "background": "green"}'>
-          <nestext-component text="NAAAYYYYY" is="error" element="p"></nestext-component>
+        <nesdialog-component id="my-dialog-two" title-text="JK it was a dialog, with options ;)" options='{"color": "black", "background": "#d1d1f6"}'>
+          <nestext-component text="HOW DARE THEE?!" is="error" element="p"></nestext-component>
           <span slot="menu">
             <nesbutton-component text="Cancel" onclick="toggleDialog('#my-dialog-two')"></nesbutton-component>
             <nesbutton-component text="Confirm" is="primary" onclick="toggleDialog('#my-dialog-two')"></nesbutton-component>
@@ -131,6 +132,40 @@
         text="NES.css does not include any JavaScript. If you want to use the dialog element outside of Chrome, you need to polyfill."
         is="error"
       ></nestext-component>
+    </nescontainer-component>
+
+    <!-- List components -->
+    <nescontainer-component title-text="List">
+      <nescontainer-component container-style='{"border": "transparent"}'>
+        <neslist-component>
+          <nestext-component text="Make sure to check out nes.css" element="li"></nestext-component>
+          <nestext-component text="And don't forget the Ionic team" element="li" is="error"></nestext-component>
+        </neslist-component>
+        <neslist-component is-filled>
+          <nestext-component text="Check out some of my other work while you are at it" element="li" is="success"></nestext-component>
+          <nestext-component text="Thanks for stopping by and can't wait to see what you create" element="li" is="warning"></nestext-component>
+        </neslist-component>
+      </nescontainer-component>
+
+      <!-- Make sure to pass is-dark to both the container and list 
+
+        /components/../nestext-component.css
+                    ^^^
+        .dark-theme li::before {
+          color: white !important;
+        }
+
+      -->
+      <nescontainer-component is-dark is-rounded>
+        <neslist-component is-dark>
+          <nestext-component text="https://www.youtube.com/watch?v=dQw4w9WgXcQ" element="li" is="warning"></nestext-component>
+          <nestext-component text="Needlessly Grieving Gregariously, You're Upset?!" element="li" is="success"></nestext-component>
+        </neslist-component>
+        <neslist-component is-dark is-filled>
+          <nestext-component text="I have run out of things to say" element="li" is="error"></nestext-component>
+          <nestext-component text="Enjoy this purposeless message anyways" element="li"></nestext-component>
+        </neslist-component>
+      </nescontainer-component>
     </nescontainer-component>
   </body>
 </html>
