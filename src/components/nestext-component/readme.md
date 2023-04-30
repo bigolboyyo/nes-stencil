@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type                                                           | Default     |
-| --------- | --------- | ----------- | -------------------------------------------------------------- | ----------- |
-| `element` | `element` |             | `keyof HTMLElementTagNameMap`                                  | `undefined` |
-| `is`      | `is`      |             | `"disabled" \| "error" \| "primary" \| "success" \| "warning"` | `undefined` |
-| `text`    | `text`    |             | `string`                                                       | `undefined` |
+| Property  | Attribute | Description | Type                                                           | Default          |
+| --------- | --------- | ----------- | -------------------------------------------------------------- | ---------------- |
+| `element` | `element` |             | `keyof HTMLElementTagNameMap`                                  | `'span'`         |
+| `is`      | `is`      |             | `"disabled" \| "error" \| "primary" \| "success" \| "warning"` | `'primary'`      |
+| `options` | `options` |             | `string`                                                       | `undefined`      |
+| `text`    | `text`    |             | `string`                                                       | `'Hello World!'` |
 
 
 ----------------------------------------------

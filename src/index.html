@@ -106,14 +106,31 @@
       </nescontainer-component>
     </nescontainer-component>
 
-    <button type="button" class="nes-btn is-primary" onclick="document.querySelector('nesdialog-component').openDialog()">Open dark and rounded dialog</button>
+    <nescontainer-component title-text="Dialog" style="max-width: 1000px">
+      <nescontainer-component container-style='{ "display": "flex", "flex-direction": "column", "gap": "1rem", "border": "transparent"}'>
+        <nesdialogbtn-component dialog-id="#my-dialog" text="Show dark and rounded dialog" toggle-fn="toggleDialog"></nesdialogbtn-component>
+        <nesdialog-component id="my-dialog" is-dark is-rounded title-text="Dark and Rounded dialog">
+          <nestext-component text="Do you see MY POWER?!" is="success" element="p"></nestext-component>
+          <span slot="menu">
+            <nesbutton-component text="Cancel" onclick="toggleDialog('nesdialog-component')"></nesbutton-component>
+            <nesbutton-component text="Confirm" is="primary" onclick="toggleDialog('nesdialog-component')"></nesbutton-component>
+          </span>
+        </nesdialog-component>
 
-    <nesdialog-component is-dark is-rounded title-text="Dark and Rounded dialog">
-      <p>Alert: this is a dialog.</p>
-      <span slot="menu">
-        <button class="nes-btn" onclick="document.querySelector('nesdialog-component').closeDialog()">Cancel</button>
-        <button class="nes-btn is-primary" onclick="document.querySelector('nesdialog-component').closeDialog()">Confirm</button>
-      </span>
-    </nesdialog-component>
+        <nesdialogbtn-component dialog-id="#my-dialog-two" text="Just some normal dialog" toggle-fn="toggleDialog"></nesdialogbtn-component>
+        <nesdialog-component id="my-dialog-two" title-text="JK it was a dialog, with options ;)" options='{"color": "red", "background": "green"}'>
+          <nestext-component text="NAAAYYYYY" is="error" element="p"></nestext-component>
+          <span slot="menu">
+            <nesbutton-component text="Cancel" onclick="toggleDialog('#my-dialog-two')"></nesbutton-component>
+            <nesbutton-component text="Confirm" is="primary" onclick="toggleDialog('#my-dialog-two')"></nesbutton-component>
+          </span>
+        </nesdialog-component>
+      </nescontainer-component>
+
+      <nestext-component
+        text="NES.css does not include any JavaScript. If you want to use the dialog element outside of Chrome, you need to polyfill."
+        is="error"
+      ></nestext-component>
+    </nescontainer-component>
   </body>
 </html>

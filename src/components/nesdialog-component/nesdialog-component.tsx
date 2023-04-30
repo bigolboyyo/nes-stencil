@@ -1,4 +1,4 @@
-import { Component, h, Prop, Method, State, Element } from '@stencil/core';
+import { Component, h, Prop, Method, State } from '@stencil/core';
 
 @Component({
   tag: 'nesdialog-component',
@@ -8,10 +8,9 @@ export class NesdialogComponent {
   @Prop() isDark?: boolean = false;
   @Prop() isRounded?: boolean = false;
   @Prop() titleText?: string = 'Dialog';
+  @Prop() options?: string = undefined;
 
   @State() isVisible: boolean = false;
-
-  @Element() el: HTMLElement;
 
   @Method()
   async openDialog() {
@@ -28,9 +27,10 @@ export class NesdialogComponent {
   render() {
     const dialogClasses = ['nes-dialog', this.isDark && 'is-dark', this.isRounded && 'is-rounded'].filter(Boolean).join(' ');
     const overlayClasses = ['dialog-overlay', !this.isVisible && 'dialog-hidden'].filter(Boolean).join(' ');
+    const parsedOptions = this.options ? JSON.parse(this.options) : {};
 
     return (
-      <div class={overlayClasses}>
+      <div class={overlayClasses} style={{ ...parsedOptions }}>
         <div class={dialogClasses}>
           <form method="dialog">
             <p class="title">{this.titleText}</p>

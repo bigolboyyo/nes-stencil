@@ -6,6 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface InitdialogComponent {
+        "closeDialog": () => Promise<void>;
+        "is"?: string;
+        "openDialog": () => Promise<void>;
+        "text"?: string;
+        "toggleFn"?: string;
+    }
     interface NesbuttonComponent {
         "fileInput"?: boolean;
         "is"?: "primary" | "success" | "warning" | "error" | "disabled";
@@ -28,7 +35,16 @@ export namespace Components {
         "isDark"?: boolean;
         "isRounded"?: boolean;
         "openDialog": () => Promise<void>;
+        "options"?: string;
         "titleText"?: string;
+    }
+    interface NesdialogbtnComponent {
+        "closeDialog": () => Promise<void>;
+        "dialogId"?: string;
+        "is"?: string;
+        "openDialog": () => Promise<void>;
+        "text"?: string;
+        "toggleFn"?: string;
     }
     interface NesinputComponent {
         "fieldType"?: "name" | "inline" | "warning" | "error" | "dark";
@@ -60,6 +76,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLInitdialogComponentElement extends Components.InitdialogComponent, HTMLStencilElement {
+    }
+    var HTMLInitdialogComponentElement: {
+        prototype: HTMLInitdialogComponentElement;
+        new (): HTMLInitdialogComponentElement;
+    };
     interface HTMLNesbuttonComponentElement extends Components.NesbuttonComponent, HTMLStencilElement {
     }
     var HTMLNesbuttonComponentElement: {
@@ -83,6 +105,12 @@ declare global {
     var HTMLNesdialogComponentElement: {
         prototype: HTMLNesdialogComponentElement;
         new (): HTMLNesdialogComponentElement;
+    };
+    interface HTMLNesdialogbtnComponentElement extends Components.NesdialogbtnComponent, HTMLStencilElement {
+    }
+    var HTMLNesdialogbtnComponentElement: {
+        prototype: HTMLNesdialogbtnComponentElement;
+        new (): HTMLNesdialogbtnComponentElement;
     };
     interface HTMLNesinputComponentElement extends Components.NesinputComponent, HTMLStencilElement {
     }
@@ -115,10 +143,12 @@ declare global {
         new (): HTMLNestextareaComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "initdialog-component": HTMLInitdialogComponentElement;
         "nesbutton-component": HTMLNesbuttonComponentElement;
         "nescheckbox-component": HTMLNescheckboxComponentElement;
         "nescontainer-component": HTMLNescontainerComponentElement;
         "nesdialog-component": HTMLNesdialogComponentElement;
+        "nesdialogbtn-component": HTMLNesdialogbtnComponentElement;
         "nesinput-component": HTMLNesinputComponentElement;
         "nesradio-component": HTMLNesradioComponentElement;
         "nesselect-component": HTMLNesselectComponentElement;
@@ -127,6 +157,11 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface InitdialogComponent {
+        "is"?: string;
+        "text"?: string;
+        "toggleFn"?: string;
+    }
     interface NesbuttonComponent {
         "fileInput"?: boolean;
         "is"?: "primary" | "success" | "warning" | "error" | "disabled";
@@ -147,7 +182,14 @@ declare namespace LocalJSX {
     interface NesdialogComponent {
         "isDark"?: boolean;
         "isRounded"?: boolean;
+        "options"?: string;
         "titleText"?: string;
+    }
+    interface NesdialogbtnComponent {
+        "dialogId"?: string;
+        "is"?: string;
+        "text"?: string;
+        "toggleFn"?: string;
     }
     interface NesinputComponent {
         "fieldType"?: "name" | "inline" | "warning" | "error" | "dark";
@@ -178,10 +220,12 @@ declare namespace LocalJSX {
         "label"?: string;
     }
     interface IntrinsicElements {
+        "initdialog-component": InitdialogComponent;
         "nesbutton-component": NesbuttonComponent;
         "nescheckbox-component": NescheckboxComponent;
         "nescontainer-component": NescontainerComponent;
         "nesdialog-component": NesdialogComponent;
+        "nesdialogbtn-component": NesdialogbtnComponent;
         "nesinput-component": NesinputComponent;
         "nesradio-component": NesradioComponent;
         "nesselect-component": NesselectComponent;
@@ -193,10 +237,12 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "initdialog-component": LocalJSX.InitdialogComponent & JSXBase.HTMLAttributes<HTMLInitdialogComponentElement>;
             "nesbutton-component": LocalJSX.NesbuttonComponent & JSXBase.HTMLAttributes<HTMLNesbuttonComponentElement>;
             "nescheckbox-component": LocalJSX.NescheckboxComponent & JSXBase.HTMLAttributes<HTMLNescheckboxComponentElement>;
             "nescontainer-component": LocalJSX.NescontainerComponent & JSXBase.HTMLAttributes<HTMLNescontainerComponentElement>;
             "nesdialog-component": LocalJSX.NesdialogComponent & JSXBase.HTMLAttributes<HTMLNesdialogComponentElement>;
+            "nesdialogbtn-component": LocalJSX.NesdialogbtnComponent & JSXBase.HTMLAttributes<HTMLNesdialogbtnComponentElement>;
             "nesinput-component": LocalJSX.NesinputComponent & JSXBase.HTMLAttributes<HTMLNesinputComponentElement>;
             "nesradio-component": LocalJSX.NesradioComponent & JSXBase.HTMLAttributes<HTMLNesradioComponentElement>;
             "nesselect-component": LocalJSX.NesselectComponent & JSXBase.HTMLAttributes<HTMLNesselectComponentElement>;

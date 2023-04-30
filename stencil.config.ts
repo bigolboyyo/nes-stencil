@@ -3,6 +3,7 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'nesstyles-component',
   globalStyle: 'src/assets/css/global.css',
+  globalScript: 'src/global-loader.ts',
   devServer: {
     openBrowser: true,
     reloadStrategy: 'pageReload',
