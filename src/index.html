@@ -127,11 +127,6 @@
           </span>
         </nesdialog-component>
       </nescontainer-component>
-
-      <nestext-component
-        text="NES.css does not include any JavaScript. If you want to use the dialog element outside of Chrome, you need to polyfill."
-        is="error"
-      ></nestext-component>
     </nescontainer-component>
 
     <!-- List components -->
@@ -169,26 +164,71 @@
     </nescontainer-component>
 
     <!-- Table Components -->
-    <nescontainer-component container-style='{"max-width": "1000px", "display": "flex", "flex-direction": "column", "align-items": "center", "gap": "2.5rem"}'>
-      <nestable-component
-        is-centered
-        is-bordered
-        headers='["Table.is-bordered", "Table.is-centered", "Table.is-centered", "Table.is-centered"]'
-        rows='[
+    <nescontainer-component title-text="Table">
+      <nescontainer-component
+        container-style='{"max-width": "1000px", "display": "flex", "flex-direction": "column", "align-items": "center", "gap": "2.5rem", "border": "transparent"}'
+      >
+        <nestable-component
+          is-centered
+          is-bordered
+          headers='["Table.is-bordered", "Table.is-centered", "Table.is-centered", "Table.is-centered"]'
+          rows='[
           ["Thou hast had a good morning", "Thou hast had a good afternoon", "Thou hast had a good evening", "Thou hast had a good night"],
           ["Thou hast had a good morning", "Thou hast had a good afternoon", "Thou hast had a good evening", "Thou hast had a good night"]
         ]'
-      ></nestable-component>
+        ></nestable-component>
 
-      <nestable-component
-        is-bordered
-        is-dark
-        headers='["Table.is-bordered", "Table.is-dark"]'
-        rows='[
+        <nestable-component
+          is-bordered
+          is-dark
+          headers='["Table.is-bordered", "Table.is-dark"]'
+          rows='[
         ["Thou hast had a good evening", "Thou hast had a good night"],
         ["Thou hast had a good evening", "Thou hast had a good night"]
       ]'
-      ></nestable-component>
+        ></nestable-component>
+      </nescontainer-component>
+    </nescontainer-component>
+
+    <!-- Progress Components -->
+    <nescontainer-component title-text="Progress">
+      <nescontainer-component
+        container-style='{"max-width": "1000px", "display": "flex", "flex-direction": "column", "align-items": "center", "gap": "2.5rem", "border": "transparent"}'
+      >
+        <nesprogress-component value="90" max="100"></nesprogress-component>
+        <nesprogress-component is-primary value="80" max="100"></nesprogress-component>
+        <nesprogress-component is-success value="50" max="100"></nesprogress-component>
+        <nesprogress-component is-warning value="30" max="100"></nesprogress-component>
+        <nesprogress-component is-error value="10" max="100"></nesprogress-component>
+        <nesprogress-component is-pattern value="50" max="100"></nesprogress-component>
+      </nescontainer-component>
+    </nescontainer-component>
+
+    <!-- Avatar Components-->
+    <nescontainer-component title-text="Avatar">
+      <nesavatar-component src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+      <nesavatar-component is-small src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+      <nesavatar-component is-medium src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+      <nesavatar-component is-large src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+
+      <nesavatar-component is-rounded src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+      <nesavatar-component is-rounded is-small src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+      <nesavatar-component is-rounded is-medium src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+      <nesavatar-component is-rounded is-large src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
+    </nescontainer-component>
+
+    <!-- Balloon Components-->
+    <nescontainer-component title-text="Balloon">
+      <nescontainer-component
+        container-style='{"max-width": "1000px", "display": "flex", "flex-direction": "column", "align-items": "center", "gap": "2.5rem", "border": "transparent"}'
+      >
+        <nesballoon-component from-right message-style='{"display": "flex", "gap": "1rem"}' container-style='{"border": "transparent"}'>
+          <nestext-component element="p" text="This is a balloon!"></nestext-component>
+        </nesballoon-component>
+        <nesballoon-component from-left img-swap is-dark message-style='{"display": "flex", "gap": "1rem"}'>
+          <nestext-component element="p" text="Wow I love ballons!!"></nestext-component>
+        </nesballoon-component>
+      </nescontainer-component>
     </nescontainer-component>
   </body>
 </html>

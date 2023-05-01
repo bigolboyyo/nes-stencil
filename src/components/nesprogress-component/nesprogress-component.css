@@ -1,0 +1,8 @@
+:host {
+  display: block;
+}
+
+nesprogress-component {
+  max-width: 1000px;
+  width: 80vw;
+}
