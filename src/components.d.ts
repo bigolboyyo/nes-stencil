@@ -62,6 +62,20 @@ export namespace Components {
         "label"?: string;
         "options"?: string;
     }
+    interface NestableComponent {
+        "headers": string;
+        "isBordered"?: boolean;
+        "isCentered"?: boolean;
+        "isDark"?: boolean;
+        "rows": string;
+    }
+    interface NestablepieceComponent {
+        "element": 'th' | 'td';
+        "isBordered"?: boolean;
+        "isCentered"?: boolean;
+        "isDark"?: boolean;
+        "text": string;
+    }
     interface NestextComponent {
         "element"?: keyof HTMLElementTagNameMap;
         "is"?: 'primary' | 'success' | 'warning' | 'error' | 'disabled';
@@ -70,6 +84,8 @@ export namespace Components {
     }
     interface NestextareaComponent {
         "label": string;
+    }
+    interface TablepieceComponent {
     }
 }
 export interface NescontainerComponentCustomEvent<T> extends CustomEvent<T> {
@@ -131,6 +147,18 @@ declare global {
         prototype: HTMLNesselectComponentElement;
         new (): HTMLNesselectComponentElement;
     };
+    interface HTMLNestableComponentElement extends Components.NestableComponent, HTMLStencilElement {
+    }
+    var HTMLNestableComponentElement: {
+        prototype: HTMLNestableComponentElement;
+        new (): HTMLNestableComponentElement;
+    };
+    interface HTMLNestablepieceComponentElement extends Components.NestablepieceComponent, HTMLStencilElement {
+    }
+    var HTMLNestablepieceComponentElement: {
+        prototype: HTMLNestablepieceComponentElement;
+        new (): HTMLNestablepieceComponentElement;
+    };
     interface HTMLNestextComponentElement extends Components.NestextComponent, HTMLStencilElement {
     }
     var HTMLNestextComponentElement: {
@@ -143,6 +171,12 @@ declare global {
         prototype: HTMLNestextareaComponentElement;
         new (): HTMLNestextareaComponentElement;
     };
+    interface HTMLTablepieceComponentElement extends Components.TablepieceComponent, HTMLStencilElement {
+    }
+    var HTMLTablepieceComponentElement: {
+        prototype: HTMLTablepieceComponentElement;
+        new (): HTMLTablepieceComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "nesbutton-component": HTMLNesbuttonComponentElement;
         "nescheckbox-component": HTMLNescheckboxComponentElement;
@@ -153,8 +187,11 @@ declare global {
         "neslist-component": HTMLNeslistComponentElement;
         "nesradio-component": HTMLNesradioComponentElement;
         "nesselect-component": HTMLNesselectComponentElement;
+        "nestable-component": HTMLNestableComponentElement;
+        "nestablepiece-component": HTMLNestablepieceComponentElement;
         "nestext-component": HTMLNestextComponentElement;
         "nestextarea-component": HTMLNestextareaComponentElement;
+        "tablepiece-component": HTMLTablepieceComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -211,6 +248,20 @@ declare namespace LocalJSX {
         "label"?: string;
         "options"?: string;
     }
+    interface NestableComponent {
+        "headers"?: string;
+        "isBordered"?: boolean;
+        "isCentered"?: boolean;
+        "isDark"?: boolean;
+        "rows"?: string;
+    }
+    interface NestablepieceComponent {
+        "element"?: 'th' | 'td';
+        "isBordered"?: boolean;
+        "isCentered"?: boolean;
+        "isDark"?: boolean;
+        "text"?: string;
+    }
     interface NestextComponent {
         "element"?: keyof HTMLElementTagNameMap;
         "is"?: 'primary' | 'success' | 'warning' | 'error' | 'disabled';
@@ -219,6 +270,8 @@ declare namespace LocalJSX {
     }
     interface NestextareaComponent {
         "label"?: string;
+    }
+    interface TablepieceComponent {
     }
     interface IntrinsicElements {
         "nesbutton-component": NesbuttonComponent;
@@ -230,8 +283,11 @@ declare namespace LocalJSX {
         "neslist-component": NeslistComponent;
         "nesradio-component": NesradioComponent;
         "nesselect-component": NesselectComponent;
+        "nestable-component": NestableComponent;
+        "nestablepiece-component": NestablepieceComponent;
         "nestext-component": NestextComponent;
         "nestextarea-component": NestextareaComponent;
+        "tablepiece-component": TablepieceComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -247,8 +303,11 @@ declare module "@stencil/core" {
             "neslist-component": LocalJSX.NeslistComponent & JSXBase.HTMLAttributes<HTMLNeslistComponentElement>;
             "nesradio-component": LocalJSX.NesradioComponent & JSXBase.HTMLAttributes<HTMLNesradioComponentElement>;
             "nesselect-component": LocalJSX.NesselectComponent & JSXBase.HTMLAttributes<HTMLNesselectComponentElement>;
+            "nestable-component": LocalJSX.NestableComponent & JSXBase.HTMLAttributes<HTMLNestableComponentElement>;
+            "nestablepiece-component": LocalJSX.NestablepieceComponent & JSXBase.HTMLAttributes<HTMLNestablepieceComponentElement>;
             "nestext-component": LocalJSX.NestextComponent & JSXBase.HTMLAttributes<HTMLNestextComponentElement>;
             "nestextarea-component": LocalJSX.NestextareaComponent & JSXBase.HTMLAttributes<HTMLNestextareaComponentElement>;
+            "tablepiece-component": LocalJSX.TablepieceComponent & JSXBase.HTMLAttributes<HTMLTablepieceComponentElement>;
         }
     }
 }

@@ -6,7 +6,7 @@ import { Component, h, Prop } from '@stencil/core';
   // shadow: true,
 })
 export class NestextComponent {
-  @Prop() text: string = 'Hello World!';
+  @Prop() text: string;
   @Prop() is?: 'primary' | 'success' | 'warning' | 'error' | 'disabled' = 'primary';
   @Prop() element?: keyof HTMLElementTagNameMap = 'span';
   @Prop() options?: string;

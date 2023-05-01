@@ -167,5 +167,28 @@
         </neslist-component>
       </nescontainer-component>
     </nescontainer-component>
+
+    <!-- Table Components -->
+    <nescontainer-component container-style='{"max-width": "1000px", "display": "flex", "flex-direction": "column", "align-items": "center", "gap": "2.5rem"}'>
+      <nestable-component
+        is-centered
+        is-bordered
+        headers='["Table.is-bordered", "Table.is-centered", "Table.is-centered", "Table.is-centered"]'
+        rows='[
+          ["Thou hast had a good morning", "Thou hast had a good afternoon", "Thou hast had a good evening", "Thou hast had a good night"],
+          ["Thou hast had a good morning", "Thou hast had a good afternoon", "Thou hast had a good evening", "Thou hast had a good night"]
+        ]'
+      ></nestable-component>
+
+      <nestable-component
+        is-bordered
+        is-dark
+        headers='["Table.is-bordered", "Table.is-dark"]'
+        rows='[
+        ["Thou hast had a good evening", "Thou hast had a good night"],
+        ["Thou hast had a good evening", "Thou hast had a good night"]
+      ]'
+      ></nestable-component>
+    </nescontainer-component>
   </body>
 </html>
