@@ -233,23 +233,25 @@
 
     <!-- Pointer Higher Order Component -->
     <nescontainer-component title-text="Pointer">
-      <nespointer-hoc>
+      <nescontainer-component container-style='{"border": "transparent"}'>
         <nesballoon-component from-right message-style='{"display": "flex", "gap": "1rem"}' container-style='{"border": "transparent"}'>
-          <nestext-component element="p" text="I'm not clickable"></nestext-component>
+          <nespointer-hoc>
+            <nestext-component element="p" text="I'm not clickable"></nestext-component>
+          </nespointer-hoc>
         </nesballoon-component>
-      </nespointer-hoc>
+      </nescontainer-component>
 
       <nespointer-hoc selector=".custom-selector">
-        <nescontainer-component >
         <nescontainer-component>
-          <nescontainer-component >
-            <nescontainer-component class="custom-selector" is-dark>
-              <nestext-component is="error" element="p" text="Use a custom selector"></nestext-component>
+          <nescontainer-component>
+            <nescontainer-component>
+              <nescontainer-component class="custom-selector" is-dark>
+                <nestext-component is="error" element="p" text="Use a custom selector"></nestext-component>
+              </nescontainer-component>
             </nescontainer-component>
           </nescontainer-component>
         </nescontainer-component>
-        </nescontainer-component>
-      </nescontainer-component>
-    </nespointer-hoc>
+      </nespointer-hoc>
+    </nescontainer-component>
   </body>
 </html>
