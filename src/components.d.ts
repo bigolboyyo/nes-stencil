@@ -39,6 +39,9 @@ export namespace Components {
         "isRounded"?: boolean;
         "titleText"?: string;
     }
+    interface NescursorHoc {
+        "selector"?: string;
+    }
     interface NesdialogComponent {
         "closeDialog": () => Promise<void>;
         "isDark"?: boolean;
@@ -65,6 +68,9 @@ export namespace Components {
     interface NeslistComponent {
         "isDark"?: boolean;
         "isFilled"?: boolean;
+    }
+    interface NespointerHoc {
+        "selector"?: string;
     }
     interface NesprogressComponent {
         "isError"?: boolean;
@@ -139,6 +145,12 @@ declare global {
         prototype: HTMLNescontainerComponentElement;
         new (): HTMLNescontainerComponentElement;
     };
+    interface HTMLNescursorHocElement extends Components.NescursorHoc, HTMLStencilElement {
+    }
+    var HTMLNescursorHocElement: {
+        prototype: HTMLNescursorHocElement;
+        new (): HTMLNescursorHocElement;
+    };
     interface HTMLNesdialogComponentElement extends Components.NesdialogComponent, HTMLStencilElement {
     }
     var HTMLNesdialogComponentElement: {
@@ -162,6 +174,12 @@ declare global {
     var HTMLNeslistComponentElement: {
         prototype: HTMLNeslistComponentElement;
         new (): HTMLNeslistComponentElement;
+    };
+    interface HTMLNespointerHocElement extends Components.NespointerHoc, HTMLStencilElement {
+    }
+    var HTMLNespointerHocElement: {
+        prototype: HTMLNespointerHocElement;
+        new (): HTMLNespointerHocElement;
     };
     interface HTMLNesprogressComponentElement extends Components.NesprogressComponent, HTMLStencilElement {
     }
@@ -205,10 +223,12 @@ declare global {
         "nesbutton-component": HTMLNesbuttonComponentElement;
         "nescheckbox-component": HTMLNescheckboxComponentElement;
         "nescontainer-component": HTMLNescontainerComponentElement;
+        "nescursor-hoc": HTMLNescursorHocElement;
         "nesdialog-component": HTMLNesdialogComponentElement;
         "nesdialogbtn-component": HTMLNesdialogbtnComponentElement;
         "nesinput-component": HTMLNesinputComponentElement;
         "neslist-component": HTMLNeslistComponentElement;
+        "nespointer-hoc": HTMLNespointerHocElement;
         "nesprogress-component": HTMLNesprogressComponentElement;
         "nesradio-component": HTMLNesradioComponentElement;
         "nesselect-component": HTMLNesselectComponentElement;
@@ -252,6 +272,9 @@ declare namespace LocalJSX {
         "onDarkThemeChange"?: (event: NescontainerComponentCustomEvent<Boolean>) => void;
         "titleText"?: string;
     }
+    interface NescursorHoc {
+        "selector"?: string;
+    }
     interface NesdialogComponent {
         "isDark"?: boolean;
         "isRounded"?: boolean;
@@ -274,6 +297,9 @@ declare namespace LocalJSX {
     interface NeslistComponent {
         "isDark"?: boolean;
         "isFilled"?: boolean;
+    }
+    interface NespointerHoc {
+        "selector"?: string;
     }
     interface NesprogressComponent {
         "isError"?: boolean;
@@ -318,10 +344,12 @@ declare namespace LocalJSX {
         "nesbutton-component": NesbuttonComponent;
         "nescheckbox-component": NescheckboxComponent;
         "nescontainer-component": NescontainerComponent;
+        "nescursor-hoc": NescursorHoc;
         "nesdialog-component": NesdialogComponent;
         "nesdialogbtn-component": NesdialogbtnComponent;
         "nesinput-component": NesinputComponent;
         "neslist-component": NeslistComponent;
+        "nespointer-hoc": NespointerHoc;
         "nesprogress-component": NesprogressComponent;
         "nesradio-component": NesradioComponent;
         "nesselect-component": NesselectComponent;
@@ -339,10 +367,12 @@ declare module "@stencil/core" {
             "nesbutton-component": LocalJSX.NesbuttonComponent & JSXBase.HTMLAttributes<HTMLNesbuttonComponentElement>;
             "nescheckbox-component": LocalJSX.NescheckboxComponent & JSXBase.HTMLAttributes<HTMLNescheckboxComponentElement>;
             "nescontainer-component": LocalJSX.NescontainerComponent & JSXBase.HTMLAttributes<HTMLNescontainerComponentElement>;
+            "nescursor-hoc": LocalJSX.NescursorHoc & JSXBase.HTMLAttributes<HTMLNescursorHocElement>;
             "nesdialog-component": LocalJSX.NesdialogComponent & JSXBase.HTMLAttributes<HTMLNesdialogComponentElement>;
             "nesdialogbtn-component": LocalJSX.NesdialogbtnComponent & JSXBase.HTMLAttributes<HTMLNesdialogbtnComponentElement>;
             "nesinput-component": LocalJSX.NesinputComponent & JSXBase.HTMLAttributes<HTMLNesinputComponentElement>;
             "neslist-component": LocalJSX.NeslistComponent & JSXBase.HTMLAttributes<HTMLNeslistComponentElement>;
+            "nespointer-hoc": LocalJSX.NespointerHoc & JSXBase.HTMLAttributes<HTMLNespointerHocElement>;
             "nesprogress-component": LocalJSX.NesprogressComponent & JSXBase.HTMLAttributes<HTMLNesprogressComponentElement>;
             "nesradio-component": LocalJSX.NesradioComponent & JSXBase.HTMLAttributes<HTMLNesradioComponentElement>;
             "nesselect-component": LocalJSX.NesselectComponent & JSXBase.HTMLAttributes<HTMLNesselectComponentElement>;

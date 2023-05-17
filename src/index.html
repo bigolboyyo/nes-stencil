@@ -204,7 +204,7 @@
       </nescontainer-component>
     </nescontainer-component>
 
-    <!-- Avatar Components-->
+    <!-- Avatar Components -->
     <nescontainer-component title-text="Avatar">
       <nesavatar-component src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
       <nesavatar-component is-small src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
@@ -217,7 +217,7 @@
       <nesavatar-component is-rounded is-large src="https://www.gravatar.com/avatar?s=15"></nesavatar-component>
     </nescontainer-component>
 
-    <!-- Balloon Components-->
+    <!-- Balloon Components -->
     <nescontainer-component title-text="Balloon">
       <nescontainer-component
         container-style='{"max-width": "1000px", "display": "flex", "flex-direction": "column", "align-items": "center", "gap": "2.5rem", "border": "transparent"}'
@@ -230,5 +230,26 @@
         </nesballoon-component>
       </nescontainer-component>
     </nescontainer-component>
+
+    <!-- Pointer Higher Order Component -->
+    <nescontainer-component title-text="Pointer">
+      <nespointer-hoc>
+        <nesballoon-component from-right message-style='{"display": "flex", "gap": "1rem"}' container-style='{"border": "transparent"}'>
+          <nestext-component element="p" text="I'm not clickable"></nestext-component>
+        </nesballoon-component>
+      </nespointer-hoc>
+
+      <nespointer-hoc selector=".custom-selector">
+        <nescontainer-component >
+        <nescontainer-component>
+          <nescontainer-component >
+            <nescontainer-component class="custom-selector" is-dark>
+              <nestext-component is="error" element="p" text="Use a custom selector"></nestext-component>
+            </nescontainer-component>
+          </nescontainer-component>
+        </nescontainer-component>
+        </nescontainer-component>
+      </nescontainer-component>
+    </nespointer-hoc>
   </body>
 </html>
